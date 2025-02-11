@@ -7,7 +7,12 @@ public class ProductManager {
 	private List<Product> Products= new ArrayList();
 	
 	//Utilizar excepciones específicas (por ejemplo, IllegalArgumentException o NoSuchElementException) en lugar de imprimir mensajes en consola. 
-	 public void addProduct(List<Product> Producto, double price) {
+	/**
+	 *  
+	 * @param Producto Miramos si el producto es nulo o está vacio.
+	 * @param price  Miramos que  su precio no sea negativo.
+	 */
+	public void addProduct(List<Product> Producto, double price) {
 	        if (Producto == null || Producto.isEmpty()) {
 	        	 throw new IllegalArgumentException("El nombre del producto no existe");
 	            
@@ -17,7 +22,7 @@ public class ProductManager {
 	            return;
 	        }
 	        try {
-	            if (productCount < productNames.length) {
+	            if (Producto.get(i)< productNames.length) {
 	                productNames[productCount] = name;
 	                productPrices[productCount] = price;
 	                productCount++;
